@@ -1,14 +1,22 @@
+import { BadRequestError } from '@/helpers/api-erros'
 import { PrismaClient } from '@prisma/client'
 import { Request, Response } from 'express'
-import { BadRequestError } from '@/helpers/api-erros'
 
 const prisma = new PrismaClient()
 
 export class ClientController {
   createAppointment = async (req: Request, res: Response) => {
-    const { clientId, serviceId, employeeId, date, time } = req.body
+    const { clientId, serviceId, employeeId, date, time, phone } = req.body
 
     try {
+      const client = await prisma.client.findUnique({
+        where: { id: clientId },
+      })
+
+      if (!client) {
+        throw new BadRequestError('Cliente não encontrado')
+      }
+
       const appointment = await prisma.appointment.create({
         data: {
           clientId,
@@ -16,8 +24,10 @@ export class ClientController {
           employeeId,
           date,
           time,
+          phone,
         },
       })
+
       return res.status(201).json(appointment)
     } catch (error) {
       console.error(error)

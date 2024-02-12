@@ -1,9 +1,9 @@
 import cors from 'cors'
-import 'express-async-errors'
 import express, { Request, Response } from 'express'
+import 'express-async-errors'
 
-import { appRoutes } from '@/routes/routes'
 import { errorMiddleware } from '@/middlewares/error'
+import appRoutes from '@/routes/routes'
 
 const port = 9000
 

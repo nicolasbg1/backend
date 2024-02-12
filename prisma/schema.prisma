@@ -42,6 +42,7 @@ model Appointment {
   serviceId     Int
   employee      Employee  @relation(fields: [employeeId], references: [id])
   employeeId    Int
+  phone         String
   date          DateTime
   time          String
   createdAt     DateTime  @default(now())
