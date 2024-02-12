@@ -1,6 +1,6 @@
-import { BadRequestError } from '@/helpers/api-erros'
 import { PrismaClient } from '@prisma/client'
 import { Request, Response } from 'express'
+import { BadRequestError } from '../helpers/api-erros'
 
 const prisma = new PrismaClient()
 

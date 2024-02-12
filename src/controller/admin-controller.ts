@@ -3,8 +3,8 @@ import bcrypt from 'bcrypt'
 import { Request, Response } from 'express'
 import jwt from 'jsonwebtoken'
 
-import { env } from '@/config/environment'
-import { UnauthorizedError } from '@/helpers/api-erros'
+import { env } from '../config/environment'
+import { UnauthorizedError } from '../helpers/api-erros'
 
 const prisma = new PrismaClient()
 

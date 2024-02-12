@@ -1,5 +1,5 @@
-import { adminRouter } from '@/routes/admin/admin-router'
-import { clientRouter } from '@/routes/client/client-router'
+import { adminRouter } from './admin/admin-router'
+import { clientRouter } from './client/client-router'
 import express from 'express'
 
 const appRoutes = express()

@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client'
 import bcrypt from 'bcrypt'
 import { NextFunction, Request, Response } from 'express'
 
-import { UnauthorizedError } from '@/helpers/api-erros'
+import { UnauthorizedError } from '../helpers/api-erros'
 
 const prisma = new PrismaClient()
 
