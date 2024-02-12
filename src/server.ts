@@ -1,0 +1,32 @@
+import cors from 'cors'
+import 'express-async-errors'
+import express, { Request, Response } from 'express'
+
+import { appRoutes } from '@/routes/routes'
+import { errorMiddleware } from '@/middlewares/error'
+
+const port = 9000
+
+const app = express()
+app.use(express.json())
+
+// :3000 refere a porta do front , alterar caso esteja diferente
+const allowedOrigins = ['http://localhost:3000']
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  }),
+)
+app.use(express.urlencoded({ extended: true }))
+
+app.use(appRoutes)
+
+app.get('*', (req: Request, res: Response) => {
+  res.send('Página não  encontrada')
+})
+
+app.use(errorMiddleware)
+app.listen(port, () => {
+  console.log(`Api rodando na porta ${port} 🤠 !!!`)
+})
