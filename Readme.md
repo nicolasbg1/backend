@@ -19,7 +19,9 @@
 1. Clone este repositório para sua máquina local.
 2. Instale as dependências do projeto usando `npm install`.
 3. Configure as variáveis de ambiente necessárias, como chaves de API, URLs do banco de dados, etc.
-4. Execute o servidor usando `npm run dev`.
+4. Rodar docker compose up -d para db e adminer
+5. Rodar a migrate do prisma no db
+6. Execute o servidor usando `npm run dev`.
 
 ## Tecnologias Utilizadas
 
