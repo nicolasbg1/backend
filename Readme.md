@@ -19,7 +19,7 @@
 1. Clone este repositório para sua máquina local.
 2. Instale as dependências do projeto usando `npm install`.
 3. Configure as variáveis de ambiente necessárias, como chaves de API, URLs do banco de dados, etc.
-4. Execute o servidor usando `npm start`.
+4. Execute o servidor usando `npm run dev`.
 
 ## Tecnologias Utilizadas
 
@@ -28,3 +28,5 @@
 - Prisma ORM
 - TypeScript
 - JWT para autenticação
+
+##Em caso de erro na execução deletar node modules e iniciar com npm install (alguns pacotes cracham seu usar a base yarn ou pnpm ``não sei o porque)
