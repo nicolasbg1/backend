@@ -29,4 +29,4 @@
 - TypeScript
 - JWT para autenticação
 
-##Em caso de erro na execução deletar node modules e iniciar com npm install (alguns pacotes cracham seu usar a base yarn ou pnpm ``não sei o porque)
+##Em caso de erro na execução deletar node modules e iniciar com npm install alguns pacotes cracham seu usar a base yarn ou pnpm `não sei o porque`
